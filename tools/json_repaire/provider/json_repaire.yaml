@@ -1,0 +1,17 @@
+identity:
+  author: yjc980121
+  name: json_repaire
+  label:
+    en_US: json_repaire
+    zh_Hans: json_repaire
+    pt_BR: json_repaire
+  description:
+    en_US: 修复不全的json文件
+    zh_Hans: 修复不全的json文件
+    pt_BR: 修复不全的json文件
+  icon: icon.svg
+tools:
+  - tools/json_repaire.yaml
+extra:
+  python:
+    source: provider/json_repaire.py

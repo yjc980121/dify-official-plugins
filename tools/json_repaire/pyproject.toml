@@ -1,0 +1,11 @@
+[project]
+name = "json-repaire"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "dify-plugin>=0.0.1b72",
+    "json-repair>=0.39.1",
+    "markdown>=3.7",
+]

@@ -1,0 +1,20 @@
+identity:
+  author: yjc980121
+  name: dingtalk_bot
+  label:
+    en_US: dingtalk_bot
+    zh_Hans: dingtalk_bot
+    pt_BR: dingtalk_bot
+  description:
+    en_US: 增强型钉钉机器人
+    zh_Hans: 增强型钉钉机器人
+    pt_BR: 增强型钉钉机器人
+  icon: icon.svg
+tools:
+  - tools/dingtalk_text.yaml
+  - tools/dingtalk_markdown.yaml
+  - tools/dingtalk_link.yaml
+  - tools/dingtalk_action_card.yaml
+extra:
+  python:
+    source: provider/dingtalk_bot.py

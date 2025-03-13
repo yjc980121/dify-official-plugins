@@ -1,0 +1,44 @@
+identity:
+  name: json_repaire
+  author: yjc980121
+  label:
+    en_US: json_repaire
+    zh_Hans: json_repaire
+    pt_BR: json_repaire
+description:
+  human:
+    en_US: 修复不全的json文件
+    zh_Hans: 修复不全的json文件
+    pt_BR: 修复不全的json文件
+  llm: 修复不全的json文件
+parameters:
+  - name: text
+    type: string
+    required: true
+    label:
+      en_US: Text
+      zh_Hans: 文本
+      pt_BR: Query string
+    human_description:
+      en_US: Text to be processed
+      zh_Hans: 文本
+      pt_BR: Query string
+    llm_description: Text to be processed
+    form: llm
+  - name: convert_json
+    type: boolean
+    default: false
+    required: true
+    label:
+      en_US: Convert to JSON
+      zh_Hans: 转换为json
+      pt_BR: Convert to JSON
+    human_description:
+      en_US: Convert to JSON
+      zh_Hans: 转换为json
+      pt_BR: Convert to JSON
+    llm_description: Convert to JSON
+    form: form
+extra:
+  python:
+    source: tools/json_repaire.py

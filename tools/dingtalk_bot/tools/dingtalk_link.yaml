@@ -1,0 +1,93 @@
+description:
+  human:
+    en_US: Sending a group message on DingTalk via the webhook of group bot
+    pt_BR: Sending a group message on DingTalk via the webhook of group bot
+    zh_Hans: 通过钉钉的群机器人webhook发送群消息
+  llm: A tool for sending messages to a chat group on DingTalk(钉钉) .
+extra:
+  python:
+    source: tools/dingtalk_link.py
+identity:
+  author: yjc980121
+  icon: icon.svg
+  label:
+    en_US: Send Link Group Message
+    pt_BR: Send Link Group Message
+    zh_Hans: 发送link群消息
+  name: dingtalk_link
+parameters:
+- form: form
+  human_description:
+    en_US: access_token in the group robot webhook
+    pt_BR: access_token in the group robot webhook
+    zh_Hans: 群自定义机器人webhook中access_token字段的值
+  label:
+    en_US: access token
+    pt_BR: access token
+    zh_Hans: access token
+  name: access_token
+  required: true
+  type: secret-input
+- form: form
+  human_description:
+    en_US: secret key for signing
+    pt_BR: secret key for signing
+    zh_Hans: 加签秘钥
+  label:
+    en_US: secret key for signing
+    pt_BR: secret key for signing
+    zh_Hans: 加签秘钥
+  name: sign_secret
+  required: true
+  type: secret-input
+- form: llm
+  human_description:
+    en_US: Title of the message
+    pt_BR: Title of the message
+    zh_Hans: 消息标题
+  label:
+    en_US: title
+    pt_BR: title
+    zh_Hans: 标题
+  llm_description: Title of the message
+  name: title
+  required: true
+  default: "默认标题"
+  type: string
+- form: llm
+  human_description:
+    en_US: Content to sent to the group.
+    pt_BR: Content to sent to the group.
+    zh_Hans: 群消息文本
+  label:
+    en_US: content
+    pt_BR: content
+    zh_Hans: 消息内容
+  llm_description: Content of the message
+  name: content
+  required: true
+  type: string
+- form: form
+  human_description:
+    en_US: Image URL
+    pt_BR: Image URL
+    zh_Hans: 图片URL
+  label:
+    en_US: picUrl
+    pt_BR: picUrl
+    zh_Hans: 图片URL
+  name: picUrl
+  required: false
+  type: string
+- form: form
+  human_description:
+    en_US: Message URL
+    pt_BR: Message URL
+    zh_Hans: 消息URL
+  label:
+    en_US: message url
+    pt_BR: message url
+    zh_Hans: 消息URL
+  name: messageUrl
+  required: false
+  type: string

@@ -1,0 +1,42 @@
+version: 0.0.1
+type: plugin
+author: yjc980121
+name: json_repaire
+label:
+  en_US: json_repaire
+  ja_JP: json_repaire
+  zh_Hans: json_repaire
+  pt_BR: json_repaire
+description:
+  en_US: 修复不全的json文件
+  ja_JP: 修复不全的json文件
+  zh_Hans: 修复不全的json文件
+  pt_BR: 修复不全的json文件
+icon: icon.svg
+resource:
+  memory: 268435456
+  permission:
+    tool:
+      enabled: true
+    endpoint:
+      enabled: true
+    app:
+      enabled: true
+    storage:
+      enabled: true
+      size: 1048576
+plugins:
+  tools:
+    - provider/json_repaire.yaml
+meta:
+  version: 0.0.1
+  arch:
+    - amd64
+    - arm64
+  runner:
+    language: python
+    version: "3.12"
+    entrypoint: main
+created_at: 2025-03-12T16:22:20.2958991+08:00
+privacy: PRIVACY.md
+verified: false
