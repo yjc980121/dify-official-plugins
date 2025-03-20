@@ -1,6 +1,7 @@
 from dify_plugin.interfaces.model.openai_compatible.rerank import (
     OAICompatRerankModel,
 )
+from dify_plugin.errors.model import CredentialsValidateFailedError
 
 
 class OpenAIRerankModel(OAICompatRerankModel):

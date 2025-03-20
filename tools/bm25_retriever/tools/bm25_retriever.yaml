@@ -1,0 +1,141 @@
+identity:
+  name: bm25_retriever
+  author: yjc980121
+  label:
+    en_US: bm25_retriever
+    zh_Hans: bm25_retriever
+    pt_BR: bm25_retriever
+description:
+  human:
+    en_US: bm算法检索
+    zh_Hans: bm算法检索
+    pt_BR: bm算法检索
+  llm: bm算法检索
+parameters:
+  - name: query
+    type: string
+    required: true
+    label:
+      en_US: Query string
+      zh_Hans: 查询语句
+      pt_BR: Query string
+    human_description:
+      en_US: Query string
+      zh_Hans: 查询语句
+      pt_BR: Query string
+    llm_description: Query string
+    form: llm
+  - name: text
+    type: string
+    required: true
+    label:
+      en_US: Text string
+      zh_Hans: 输入文本
+      pt_BR: Text string
+    human_description:
+      en_US: Text string
+      zh_Hans:  输入文本
+      pt_BR: Text string
+    llm_description: bm算法检索
+    form: form
+  - name: segment_method
+    required: false
+    default: paragraph
+    label:
+      en_US: Segment method
+      zh_Hans: 分割方法
+      pt_BR: Segment method
+    human_description:
+      en_US: Segment method
+      zh_Hans: 分割方法
+      pt_BR: Segment method
+    type: select
+    options:
+      - value: paragraph
+        label:
+          en_US: Paragraph
+          zh_Hans: 段落
+          pt_BR: Paragraph
+      - value: sentence
+        label:
+          en_US: Sentence
+          zh_Hans: 句子
+          pt_BR: Sentence
+      - value: chapter
+        label:
+          en_US: Chapter
+          zh_Hans: 章节
+          pt_BR: Chapter
+      - value: markdown
+        label:
+          en_US: Markdown
+          zh_Hans: Markdown
+          pt_BR: Markdown
+      - value: email
+        label:
+          en_US: Email
+          zh_Hans: 邮件
+          pt_BR: Email
+      - value: social
+        label:
+          en_US: Social
+          zh_Hans: 社交
+          pt_BR: Social
+      - value: equation
+        label:
+          en_US: Equation
+          zh_Hans: 公式
+          pt_BR: Equation
+      - value: code
+        label:
+          en_US: Code
+          zh_Hans: 代码
+          pt_BR: Code
+      - value: csv
+        label:
+          en_US: CSV
+          zh_Hans: CSV
+          pt_BR: CSV
+      - value: html
+        label:
+          en_US: HTML
+          zh_Hans: HTML
+          pt_BR: HTML
+      - value: xml
+        label:
+          en_US: XML
+          zh_Hans: XML
+          pt_BR: XML
+    llm_description: Segment method
+    form: form
+  - name: overlap
+    type: number
+    required: false
+    default: 50
+    label:
+      en_US: Overlap
+      zh_Hans: 重叠
+      pt_BR: Overlap
+    human_description:
+      en_US: Overlap
+      zh_Hans: 重叠
+      pt_BR: Overlap
+    llm_description: Overlap
+    form: form
+  - name: top_k
+    type: number
+    required: false
+    default: 10
+    label:
+      en_US: Top K
+      zh_Hans: 前k个
+      pt_BR: Top K
+    human_description:
+      en_US: Top K
+      zh_Hans: 前k个
+      pt_BR: Top K
+    llm_description: Top K
+    form: form
+extra:
+  python:
+    source: tools/bm25_retriever.py

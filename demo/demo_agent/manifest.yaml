@@ -1,0 +1,43 @@
+version: 0.0.1
+type: plugin
+author: yjc980121
+name: demo_agent
+label:
+  en_US: demo_agent
+  ja_JP: demo_agent
+  zh_Hans: demo_agent
+  pt_BR: demo_agent
+description:
+  en_US: 示例agent策略
+  ja_JP: 示例agent策略
+  zh_Hans: 示例agent策略
+  pt_BR: 示例agent策略
+icon: icon.svg
+resource:
+  memory: 268435456
+  permission:
+    tool:
+      enabled: true
+    model:
+      enabled: true
+      llm: true
+      text_embedding: true
+      rerank: true
+      tts: true
+      speech2text: true
+      moderation: true
+plugins:
+  agent_strategies:
+    - provider/demo_agent.yaml
+meta:
+  version: 0.0.1
+  arch:
+    - amd64
+    - arm64
+  runner:
+    language: python
+    version: "3.12"
+    entrypoint: main
+created_at: 2025-03-14T14:47:53.2994763+08:00
+privacy: PRIVACY.md
+verified: false

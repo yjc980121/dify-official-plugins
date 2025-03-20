@@ -1,0 +1,6 @@
+dify_plugin~=0.0.1b72
+beautifulsoup4
+llama-index
+microtokenizer
+numpy
+rank-bm25

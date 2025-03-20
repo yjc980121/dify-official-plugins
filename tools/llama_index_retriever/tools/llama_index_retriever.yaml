@@ -1,0 +1,30 @@
+identity:
+  name: llama_index_retriever
+  author: yjc980121
+  label:
+    en_US: llama_index_retriever
+    zh_Hans: llama_index_retriever
+    pt_BR: llama_index_retriever
+description:
+  human:
+    en_US: llama index 检索工具
+    zh_Hans: llama index 检索工具
+    pt_BR: llama index 检索工具
+  llm: llama index 检索工具
+parameters:
+  - name: query
+    type: string
+    required: true
+    label:
+      en_US: Query string
+      zh_Hans: 查询语句
+      pt_BR: Query string
+    human_description:
+      en_US: llama index 检索工具
+      zh_Hans: llama index 检索工具
+      pt_BR: llama index 检索工具
+    llm_description: llama index 检索工具
+    form: llm
+extra:
+  python:
+    source: tools/llama_index_retriever.py

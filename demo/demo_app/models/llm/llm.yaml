@@ -1,0 +1,33 @@
+model: gpt-3.5-turbo-16k-0613 # (string)：模型标识
+label: # (object[optional])：模型展示名称，i18n，可设置 `en_US` 英文、`zh_Hans` 中文两种语言
+  zh_Hans: gpt-3.5-turbo-16k-0613
+  en_US: gpt-3.5-turbo-16k-0613
+model_type: llm # (string, required)：模型类型，llm,text-embedding,rerank,speech2text,tts,moderation
+features:  # (list[string], required)：模型支持的功能,agent-thought,vision,tool-call,multi-tool-call,stream-tool-call
+  - multi-tool-call
+  - agent-thought
+  - stream-tool-call
+model_properties:  # (object)：模型的属性
+  mode: chat  # (string)：模型工作模式，`chat` | `completion`
+  context_size: 16385  # (int)：模型上下文大小
+parameter_rules:  # (list[ParameterRule], required)：模型参数规则
+  - name: temperature  # (string)：调用模型实际参数名
+    use_template: temperature # (string[optional])：使用模板
+  - name: top_p  
+    use_template: top_p
+  - name: presence_penalty
+    use_template: presence_penalty
+  - name: frequency_penalty
+    use_template: frequency_penalty
+  - name: max_tokens
+    use_template: max_tokens
+    default: 512
+    min: 1
+    max: 16385
+  - name: response_format
+    use_template: response_format
+pricing: # (object[optional])：模型价格
+  input: '0.003'
+  output: '0.004'
+  unit: '0.001'
+  currency: USD

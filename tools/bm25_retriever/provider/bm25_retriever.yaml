@@ -1,0 +1,17 @@
+identity:
+  author: yjc980121
+  name: bm25_retriever
+  label:
+    en_US: bm25_retriever
+    zh_Hans: bm25_retriever
+    pt_BR: bm25_retriever
+  description:
+    en_US: bm算法检索
+    zh_Hans: bm算法检索
+    pt_BR: bm算法检索
+  icon: icon.svg
+tools:
+  - tools/bm25_retriever.yaml
+extra:
+  python:
+    source: provider/bm25_retriever.py

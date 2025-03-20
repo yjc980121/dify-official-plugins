@@ -1,0 +1,55 @@
+version: 0.0.1  # version, required,插件的版本
+type: plugin  # type, required,插件类型,目前仅支持plugin,未来支持bundle
+author: yjc980121  # string, required,插件作者
+name: demo_tool  # string, required,插件名称
+label:  # label, required,插件名称,多语言名词
+  en_US: demo_tool
+  ja_JP: demo_tool
+  zh_Hans: demo_tool
+  pt_BR: demo_tool
+description:  # description, required,插件描述,多语言名词
+  en_US: 简单描述一下
+  ja_JP: 简单描述一下
+  zh_Hans: 简单描述一下
+  pt_BR: 简单描述一下
+icon: icon.svg  # assset, required,插件图标,svg格式
+resource:  # object,需要申请的资源
+  memory: 268435456  # memory int64,最大内存占用，主要与SaaS上的AWS Lambda资源申请相关,单位字节
+  permission:  # object,插件权限
+    tool:  # object,反向调用工具的权限
+      enabled: true  # boolean
+    model:  # object,反向调用模型的权限
+      enabled: true  # boolean
+      llm: true  # boolean
+      text_embedding: true  # boolean
+      rerank: true  # boolean
+      tts: true  # boolean
+      speech2text: true  # boolean
+      moderation: true  # boolean
+    endpoint: # object,允许注册endpoint的权限
+      enabled: true  # boolean
+    app: # object,反向调用app的权限
+      enabled: true  # boolean
+    storage: # object,申请持久化存储的权限
+      enabled: true  # boolean
+      size: 1048576  # int64,最大允许的持久化内存，单位字节
+plugins: # object,required,插件扩展的具体能力的yaml文件列表，插件包内的绝对路径，如需要扩展模型，则需要定义一个类似于 openai.yaml的文件，并将该文件路径填写在此处，且该路径上的文件必须真实存在，否则打包将失败。
+  tools:  # list[string],插件扩展的工具供应商
+    - provider/demo_tool.yaml
+  # 限制
+  ## 不允许同时扩展工具与模型
+  ## 不允许没有任意扩展
+  ## 不允许同时扩展模型与endpoint
+  ## 目前仅支持各扩展最多一个供应商 
+meta:   # object
+  version: 0.0.1  # version, required,格式版本，初始版本0.0.1
+  arch:  # list[string], required,支持的的架构，目前支持amd64和arm64
+    - amd64
+    - arm64
+  runner:  # object, required,插件运行时的环境
+    language: python  # string, required,编程语言,目前仅支持python
+    version: "3.12"  # string, required,语言版本,目前仅支持3.12
+    entrypoint: main  # string, required,程序入口,在python下应为main
+created_at: 2025-03-14T14:31:23.8370786+08:00  # RFC3339, required,插件创建时间,marketplace上要求创建时间不得大于当前时间
+privacy: PRIVACY.md # string,optional,隐私政策文件的相对路径或URL,例如"./privacy.md"或者"https://example.com/privacy"。如果计划将插件上架至marketplace，必须提供隐私政策文件。
+verified: false # boolean,optional,是否已验证,默认为false

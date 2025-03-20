@@ -1,0 +1,30 @@
+identity:
+  name: demo_app
+  author: yjc980121
+  label:
+    en_US: demo_app
+    zh_Hans: demo_app
+    pt_BR: demo_app
+description:
+  human:
+    en_US: 简单描述一下
+    zh_Hans: 简单描述一下
+    pt_BR: 简单描述一下
+  llm: 简单描述一下
+parameters:
+  - name: query
+    type: string
+    required: true
+    label:
+      en_US: Query string
+      zh_Hans: 查询语句
+      pt_BR: Query string
+    human_description:
+      en_US: 简单描述一下
+      zh_Hans: 简单描述一下
+      pt_BR: 简单描述一下
+    llm_description: 简单描述一下
+    form: llm
+extra:
+  python:
+    source: tools/demo_app.py

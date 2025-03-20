@@ -14,4 +14,5 @@ class OpenAIProvider(ModelProvider):
 
         :param credentials: provider credentials, credentials form defined in `provider_credential_schema`.
         """
+        print("credentials", credentials)
         pass

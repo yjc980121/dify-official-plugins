@@ -1,0 +1,17 @@
+identity:
+  author: yjc980121
+  name: jfcdt_aireport
+  label:
+    en_US: jfcdt_aireport
+    zh_Hans: jfcdt_aireport
+    pt_BR: jfcdt_aireport
+  description:
+    en_US: 数调云的接口信息
+    zh_Hans: 数调云的接口信息
+    pt_BR: 数调云的接口信息
+  icon: icon.svg
+tools:
+  - tools/jfcdt_aireport.yaml
+extra:
+  python:
+    source: provider/jfcdt_aireport.py

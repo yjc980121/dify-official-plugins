@@ -1,0 +1,30 @@
+identity:
+  name: jfcdt_aireport
+  author: yjc980121
+  label:
+    en_US: jfcdt_aireport
+    zh_Hans: jfcdt_aireport
+    pt_BR: jfcdt_aireport
+description:
+  human:
+    en_US: 数调云的接口信息
+    zh_Hans: 数调云的接口信息
+    pt_BR: 数调云的接口信息
+  llm: 数调云的接口信息
+parameters:
+  - name: query
+    type: string
+    required: true
+    label:
+      en_US: Query string
+      zh_Hans: 查询语句
+      pt_BR: Query string
+    human_description:
+      en_US: 数调云的接口信息
+      zh_Hans: 数调云的接口信息
+      pt_BR: 数调云的接口信息
+    llm_description: 数调云的接口信息
+    form: llm
+extra:
+  python:
+    source: tools/jfcdt_aireport.py

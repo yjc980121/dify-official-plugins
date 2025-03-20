@@ -1,0 +1,42 @@
+version: 0.0.1
+type: plugin
+author: yjc980121
+name: bm25_retriever
+label:
+  en_US: bm25_retriever
+  ja_JP: bm25_retriever
+  zh_Hans: bm25_retriever
+  pt_BR: bm25_retriever
+description:
+  en_US: bm算法检索
+  ja_JP: bm算法检索
+  zh_Hans: bm算法检索
+  pt_BR: bm算法检索
+icon: icon.svg
+resource:
+  memory: 268435456
+  permission:
+    tool:
+      enabled: true
+    endpoint:
+      enabled: true
+    app:
+      enabled: true
+    storage:
+      enabled: true
+      size: 1048576
+plugins:
+  tools:
+    - provider/bm25_retriever.yaml
+meta:
+  version: 0.0.1
+  arch:
+    - amd64
+    - arm64
+  runner:
+    language: python
+    version: "3.12"
+    entrypoint: main
+created_at: 2025-03-18T09:39:55.2791421+08:00
+privacy: PRIVACY.md
+verified: false

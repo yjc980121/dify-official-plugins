@@ -1,0 +1,26 @@
+identity:
+  name: demo_agent
+  author: yjc980121
+  label:
+    en_US: DemoAgent
+description:
+  en_US: DemoAgent
+parameters:
+  - name: model
+    type: model-selector  # (string)：模型选择器类型，目前仅支持`model-selector`
+    scope: tool-call&llm  # (string)：模型选择器的范围，目前仅支持`tool-call`和`llm`
+    required: true
+    label:
+      en_US: Model
+      zh_Hans: 模型
+      pt_BR: Model
+  - name: tools
+    type: array[tools]  # (string)：工具数组类型
+    required: true
+    label:
+      en_US: Tools list
+      zh_Hans: 工具列表
+      pt_BR: Tools list
+extra:
+  python:
+    source: strategies/demo_agent.py

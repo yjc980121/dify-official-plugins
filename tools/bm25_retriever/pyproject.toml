@@ -1,0 +1,15 @@
+[project]
+name = "bm25-retriever"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "beautifulsoup4>=4.13.3",
+    "dify-plugin~=0.0.1b72",
+    "llama-index>=0.12.24",
+    "microtokenizer>=0.21.3",
+    "numpy>=2.2.4",
+    "rank-bm25>=0.2.2",
+    "thulac>=0.2.2",
+]

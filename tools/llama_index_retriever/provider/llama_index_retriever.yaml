@@ -1,0 +1,17 @@
+identity:
+  author: yjc980121
+  name: llama_index_retriever
+  label:
+    en_US: llama_index_retriever
+    zh_Hans: llama_index_retriever
+    pt_BR: llama_index_retriever
+  description:
+    en_US: llama index 检索工具
+    zh_Hans: llama index 检索工具
+    pt_BR: llama index 检索工具
+  icon: icon.svg
+tools:
+  - tools/llama_index_retriever.yaml
+extra:
+  python:
+    source: provider/llama_index_retriever.py

@@ -1,0 +1,17 @@
+identity:
+  author: yjc980121
+  name: demo_app
+  label:
+    en_US: demo_app
+    zh_Hans: demo_app
+    pt_BR: demo_app
+  description:
+    en_US: 简单描述一下
+    zh_Hans: 简单描述一下
+    pt_BR: 简单描述一下
+  icon: icon.svg
+tools:
+  - tools/demo_tool.yaml
+extra:
+  python:
+    source: provider/demo_tool.py

@@ -1,0 +1,13 @@
+identity:
+  author: yjc980121
+  name: demo_agent
+  label:
+    en_US: DemoAgent
+  description:
+    en_US: DemoAgent
+  icon: icon.svg
+strategies:
+  - strategies/demo_agent.yaml
+extra:
+  python:
+    source: provider/demo_agent.py

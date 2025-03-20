@@ -1,0 +1,50 @@
+version: 0.0.1
+type: plugin
+author: yjc980121
+name: demo_endpoint
+label:
+  en_US: demo_endpoint
+  ja_JP: demo_endpoint
+  zh_Hans: demo_endpoint
+  pt_BR: demo_endpoint
+description:
+  en_US: 示例endpoint
+  ja_JP: 示例endpoint
+  zh_Hans: 示例endpoint
+  pt_BR: 示例endpoint
+icon: icon.svg
+resource:
+  memory: 268435456
+  permission:
+    tool:
+      enabled: true
+    model:
+      enabled: true
+      llm: true
+      text_embedding: true
+      rerank: true
+      tts: true
+      speech2text: true
+      moderation: true
+    endpoint:
+      enabled: true
+    app:
+      enabled: true
+    storage:
+      enabled: true
+      size: 1048576
+plugins:
+  endpoints:
+    - group/demo_endpoint.yaml
+meta:
+  version: 0.0.1
+  arch:
+    - amd64
+    - arm64
+  runner:
+    language: python
+    version: "3.12"
+    entrypoint: main
+created_at: 2025-03-14T14:50:12.2102615+08:00
+privacy: PRIVACY.md
+verified: false

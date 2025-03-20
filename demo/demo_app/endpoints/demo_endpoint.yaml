@@ -1,0 +1,5 @@
+path: "/uwu/demo_endpoint/uwu" # (string)：遵循 werkzeug 接口标准
+method: "GET" # (string)：接口方法，仅支持`HEAD` `GET` `POST` `PUT` `DELETE` `OPTIONS`
+extra: # (object)：除基础信息外的配置信息
+  python: # (object)：
+    source: "endpoints/demo_endpoint.py" # (string)：实现该接口的源代码
