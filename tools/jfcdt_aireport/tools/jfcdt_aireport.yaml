@@ -12,18 +12,57 @@ description:
     pt_BR: 数调云的接口信息
   llm: 数调云的接口信息
 parameters:
-  - name: query
+  - name: token
     type: string
     required: true
     label:
-      en_US: Query string
-      zh_Hans: 查询语句
-      pt_BR: Query string
+      en_US: Token
+      zh_Hans: Token
+      pt_BR: Token
     human_description:
-      en_US: 数调云的接口信息
-      zh_Hans: 数调云的接口信息
-      pt_BR: 数调云的接口信息
-    llm_description: 数调云的接口信息
+      en_US: Token
+      zh_Hans: Token
+      pt_BR: Token
+    llm_description: Token
+    form: llm
+  - name: report_no
+    type: string
+    required: true
+    label:
+      en_US: Report No
+      zh_Hans: 报告编号
+      pt_BR: Report No
+    human_description:
+      en_US: Report No
+      zh_Hans: 报告编号
+      pt_BR: Report No
+    llm_description: Report No
+    form: llm
+  - name: root_tag
+    type: string
+    required: false
+    label:
+      en_US: Root Tag
+      zh_Hans: 根标签
+      pt_BR: Root Tag
+    human_description:
+      en_US: Root Tag
+      zh_Hans: 根标签
+      pt_BR: Root Tag
+    llm_description: Root Tag
+    form: llm
+  - name: base_url
+    type: string
+    required: true
+    label:
+      en_US: Base URL
+      zh_Hans: 基础URL
+      pt_BR: Base URL
+    human_description:
+      en_US: Base URL
+      zh_Hans: 基础URL
+      pt_BR: Base URL
+    llm_description: Base URL
     form: llm
 extra:
   python:

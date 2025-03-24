@@ -14,7 +14,7 @@ settings:
       ja_JP: API keyを入力してください
   - name: app_id
     type: app-selector
-    scope: chat
+    scope: chat&
     required: true
     label:
       en_US: App

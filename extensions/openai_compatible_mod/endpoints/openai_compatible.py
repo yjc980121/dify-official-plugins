@@ -26,10 +26,12 @@ class OpenaiCompatible(Endpoint, BaseAuth):
             data = r.get_json()
             messages = data.get("messages", [])
             stream = data.get("stream", False)
+            model = data.get("model", "gpt-3.5-turbo")
             
             conversation_id, query = self._get_memory(memory_mode, messages)
             inputs = data.get("inputs", {})
             inputs["messages"] = json.dumps(messages)
+            inputs["model"] = model
 
             if stream:
                 def generator():
@@ -40,7 +42,7 @@ class OpenaiCompatible(Endpoint, BaseAuth):
                         response_mode="streaming",
                         conversation_id=conversation_id,
                     )
-                    return self._handle_chat_stream_message(app_id, response)
+                    return self._handle_chat_stream_message(app_id=app_id, generator=response, model=model)
 
                 return Response(
                     generator(),
@@ -60,7 +62,7 @@ class OpenaiCompatible(Endpoint, BaseAuth):
                     conversation_id=conversation_id,
                 )
                 return Response(
-                    self._handle_chat_blocking_message(app_id, response),
+                    self._handle_chat_blocking_message(app_id=app_id, response=response, model=model),
                     status=200,
                     content_type="text/html",
                 )
@@ -132,7 +134,7 @@ class OpenaiCompatible(Endpoint, BaseAuth):
             )
 
     def _handle_chat_stream_message(
-        self, app_id: str, generator: Generator[dict[str, Any], None, None]
+        self, app_id: str, generator: Generator[dict[str, Any], None, None], model: str="gpt-3.5-turbo"
     ) -> Generator[str, None, None]:
         """
         Handle the chat stream
@@ -144,7 +146,7 @@ class OpenaiCompatible(Endpoint, BaseAuth):
                     "id": "chatcmpl-" + data.get("message_id", "none"),
                     "object": "chat.completion.chunk",
                     "created": int(data.get("created", 0)),
-                    "model": "gpt-3.5-turbo",
+                    "model": model,
                     "system_fingerprint": "difyai",
                     "choices": [
                         {
@@ -164,7 +166,7 @@ class OpenaiCompatible(Endpoint, BaseAuth):
                     "id": "chatcmpl-" + data.get("message_id", "none"),
                     "object": "chat.completion.chunk",
                     "created": int(data.get("created", 0)),
-                    "model": "gpt-3.5-turbo",
+                    "model": model,
                     "system_fingerprint": "difyai",
                     "choices": [
                         {
@@ -192,7 +194,7 @@ class OpenaiCompatible(Endpoint, BaseAuth):
                     "id": "chatcmpl-" + message_id,
                     "object": "chat.completion.chunk",
                     "created": int(data.get("created", 0)),
-                    "model": "gpt-3.5-turbo",
+                    "model": model,
                     "system_fingerprint": "difyai",
                     "choices": [
                         {
@@ -209,7 +211,7 @@ class OpenaiCompatible(Endpoint, BaseAuth):
         yield "data: [DONE]\n\n"
 
     def _handle_chat_blocking_message(
-        self, app_id: str, response: dict[str, Any]
+        self, app_id: str, response: dict[str, Any], model: str="gpt-3.5-turbo"
     ) -> str:
         """
         Handle the chat blocking message
@@ -218,7 +220,7 @@ class OpenaiCompatible(Endpoint, BaseAuth):
             "id": "chatcmpl-" + response.get("id", "none"),
             "object": "chat.completion",
             "created": int(response.get("created", 0)),
-            "model": "gpt-3.5-turbo",
+            "model": model,
             "system_fingerprint": "difyai",
             "choices": [
                 {
